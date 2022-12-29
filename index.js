@@ -7,3 +7,14 @@
 // 1.2 Ejecuta esta función pasando un solo parametro
 // 1.3 Ejecuta esta función pasando dos parametros
 
+let a = 10
+let b = 5
+
+const sum = (num1, num2) => {
+  return num1 + num2
+}
+
+console.log(sum())
+console.log(sum(a))
+console.log(sum(a , b))
+
