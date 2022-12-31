@@ -237,8 +237,10 @@ const filterStreamers = (input) => {
 	 const streamersFiltered = streamers3.filter(streamer => streamer.name.toLocaleLowerCase().includes(filter.toLowerCase()))
 	 console.log(streamersFiltered)
 }
-const input$$ = document.querySelector("[data-function='toFilterStreamers3']");
-input$$.addEventListener("change", () => {filterStreamers(input$$)})
+
+//?comentados para poder ver en la terminal el resto
+// const input$$ = document.querySelector("[data-function='toFilterStreamers3']");
+// input$$.addEventListener("change", () => {filterStreamers(input$$)})
 
 // 5.7 Dado el siguiente html y javascript, utiliza .filter() para mostrar por consola 
 // los streamers que incluyan la palabra introducida en el input. De esta forma, si 
@@ -252,6 +254,44 @@ const streamers4 = [
 	{name: 'AuronPlay', age: 33, gameMorePlayed: 'Among Us'}
 ];
 
-const input2$$ = document.querySelector("[data-function='toFilterStreamers4']");
-const btn$$ = document.querySelector("[data-function='toShowFilterStreamers4']");
-btn$$.addEventListener("click", () => {filterStreamers(input2$$)})
+//?comentados para poder ver en la terminal el resto
+// const input2$$ = document.querySelector("[data-function='toFilterStreamers4']");
+// const btn$$ = document.querySelector("[data-function='toShowFilterStreamers4']");
+// btn$$.addEventListener("click", () => {filterStreamers(input2$$)})
+
+//* Iteración #6: Find
+console.log("----Iteración #6: Find----")
+
+// 6.1 Dado el siguiente array, usa .find() para econtrar el número 100.
+const numbers = [32, 21, 63, 95, 100, 67, 43];
+const numFound = numbers.find(num => num === 100)
+console.log(numFound)
+
+// 6.2 Dado el siguiente array, usa .find() para econtrar la pelicula del año 2010.
+const movies = [
+	{title: 'Madagascar', stars: 4.5, date: 2015},
+	{title: 'Origen', stars: 5, date: 2010},
+	{title: 'Your Name', stars: 5, date: 2016}
+];
+const movieFound = movies.find(movie => movie.date === 2010)
+console.log(movieFound)
+
+// 6.3 Dado el siguiente javascript, usa .find() para econtrar el alien de nombre 
+// 'Cucushumushu' y la mutación 'Porompompero'. Una vez que los encuentres, usa 
+// spread operator para fusionarlos teniendo en cuenta que el objeto de la mutación 
+// lo queremos meter en la propiedad .mutation del objeto fusionado.
+const aliens = [
+	{name: 'Zalamero', planet: 'Eden', age: 4029},
+	{name: 'Paktu', planet: 'Andromeda', age: 32},
+	{name: 'Cucushumushu', planet: 'Marte', age: 503021}
+];
+const mutations = [
+	{name: 'Porompompero', description: 'Hace que el alien pueda adquirir la habilidad de tocar el tambor'},
+	{name: 'Fly me to the moon', description: 'Permite volar, solo y exclusivamente a la luna'},
+	{name: 'Andando que es gerundio', description: 'Invoca a un señor mayor como Personal Trainer'}
+];
+
+const alienFound = aliens.find(alien => alien.name === "Cucushumushu")
+const mutationFound = mutations.find(mutation => mutation.name === "Porompompero")
+const mutants = {...alienFound, mutation: {...mutationFound}}
+console.log(mutants)
